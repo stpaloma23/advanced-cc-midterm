@@ -5,17 +5,17 @@ import { Application, Container } from "pixi.js";
 const load = (app: PIXI.Application) => {
   return new Promise<void>((resolve) => {
       app.loader
-      .add('./addOns/plane.png')
-      .add('./addOns/cloud.png')
-      .add('./skylines/nyc.png')
-      .add('./skylines/paris.png')
-      .add('./skylines/beach.png')
-      .add('./skylines/farm.png')
-      .add('./addOns/farmsky.jpeg')
-      .add('./addOns/arrow.png')
-      .add('./addOns/sunset.jpeg')
-      .add('./addOns/parisbkg.png')
-      .add('./addOns/moon.png')
+      .add('./assets/addOns/plane.png')
+      .add('./assets/addOns/cloud.png')
+      .add('./assets/skylines/nyc.png')
+      .add('./assets/skylines/paris.png')
+      .add('./assets/skylines/beach.png')
+      .add('./assets/skylines/farm.png')
+      .add('./assets/addOns/farmsky.jpeg')
+      .add('./assets/addOns/arrow.png')
+      .add('./assets/addOns/sunset.jpeg')
+      .add('./assets/addOns/parisbkg.png')
+      .add('./assets/addOns/moon.png')
       .load(() => {
           resolve();
       });
@@ -77,7 +77,7 @@ const main = async () => {
 function makingMain(){ 
     
     // i followed this tutorial https://www.youtube.com/watch?v=yob_-5KSl2g to make the plane move with the mouse 
-    let plane = PIXI.Sprite.from('./addOns/plane.png');
+    let plane = PIXI.Sprite.from('./assets/addOns/plane.png');
     
     plane.anchor.set(0.5, 0.5);
     plane.scale.set(0.4, 0.4);
@@ -178,9 +178,9 @@ function makingMain(){
 }
 // the following functions are creating each destination 
 function makingParis(container: Container){
-    let bkg = PIXI.Sprite.from('./addOns/parisbkg.png');
+    let bkg = PIXI.Sprite.from('./assets/addOns/parisbkg.png');
     container.addChild(bkg);
-    let silo = PIXI.Sprite.from('./skylines/paris.png');
+    let silo = PIXI.Sprite.from('./assets/skylines/paris.png');
     silo.width = innerWidth+40;
     silo.height = 700;
     silo.x = -20;
@@ -191,15 +191,15 @@ function makingParis(container: Container){
 }
 
 function makingFarm(container: Container){
-    let sky = PIXI.Sprite.from('./addOns/farmsky.jpeg');
+    let sky = PIXI.Sprite.from('./assets/addOns/farmsky.jpeg');
     container.addChild(sky);
-    let silo = PIXI.Sprite.from('./skylines/farm.png');
+    let silo = PIXI.Sprite.from('./assets/skylines/farm.png');
     silo.width = screen.width + 40;
     silo.height = 600;
     silo.x = -20;
     silo.y = 200;
     container.addChild(silo);
-    let sun = PIXI.Sprite.from('./addOns/sun.png');
+    let sun = PIXI.Sprite.from('./assets/addOns/sun.png');
     sun.x = 300;
     sun.y = 30;
     sun.height = 260;
@@ -213,13 +213,13 @@ function makingNYC(container: Container){
     let bkg = new PIXI.Graphics().beginFill(0x000080).drawRect(0, 0, screen.width, screen.height);
     container.addChild(bkg);
     makeStarrySky();
-    let silo = PIXI.Sprite.from('./skylines/nyc1.png');
+    let silo = PIXI.Sprite.from('./assets/skylines/nyc1.png');
     silo.width = screen.width+80;
     silo.height = screen.height;
     silo.x = -50;
     silo.y = screen.height - 820;
     container.addChild(silo);
-    let moon = PIXI.Sprite.from('./addOns/moon.png');
+    let moon = PIXI.Sprite.from('./assets/addOns/moon.png');
     moon.x = 700;
     moon.y = 70;
     moon.height = 150;
@@ -230,17 +230,17 @@ function makingNYC(container: Container){
 }
 
 function makingBeach(container: Container){
-    let bkg = PIXI.Sprite.from('./addOns/sunset.jpeg');
+    let bkg = PIXI.Sprite.from('./assets/addOns/sunset.jpeg');
     bkg.width = screen.width;
     bkg.height = screen.height;
     container.addChild(bkg);
-    let beach = PIXI.Sprite.from('./skylines/beach.png');
+    let beach = PIXI.Sprite.from('./assets/skylines/beach.png');
     beach.width = screen.width;
     beach.height = 700;
     beach.x = 0;
     beach.y = screen.height - 750;
     container.addChild(beach);
-    let sun = PIXI.Sprite.from('./addOns/sun.png');
+    let sun = PIXI.Sprite.from('./assets/addOns/sun.png');
     sun.x = 700;
     sun.y = 30;
     sun.height = 300;
@@ -253,7 +253,7 @@ function makingBeach(container: Container){
 // each destination has a back arrow that allows students to return to the home page 
 // function takes a specified container and placed the arrow at the top left corner
 function backArrow(container: Container){
-    let arrow = PIXI.Sprite.from('./addOns/arrow.png');
+    let arrow = PIXI.Sprite.from('./assets/addOns/arrow.png');
     arrow.x = 30;
     arrow.y = 30;
     arrow.width = 100;
